@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>유아 단어 학습 프로그램</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'G-XXXXXXX');
+  </script>
+</head>
+<body>
+  <div id="home" class="page home-page">
+    <h1>유아 단어 학습 프로그램</h1>
+
+    <!-- h2와 아이콘을 같은 줄에 배치 -->
+    <div class="title-row">
+      <h2>재미있게 배우는 5단계 학습</h2>
+      <div id="shuffle-icon" class="shuffle-icon">🔀</div>
+    </div>
+
+    <div class="menu">
+      <button onclick="startStage(1)">1단계: 단어 카드</button>
+      <button onclick="startStage(2)">2단계: 그림 찾기</button>
+      <button onclick="startStage(3)">3단계: 단어 읽기</button>
+      <button onclick="startStage(4)">4단계: 한 글자씩 듣기</button>
+      <button onclick="startStage(5)">5단계: 글자 찾기</button>
+    </div>
+  </div>
+
+  <div id="stage" class="page hidden">
+    <h1 id="stage-main-title"></h1>
+    <h2 id="stage-subtitle"></h2>
+    <p id="stage-description"></p>
+  
+    <div id="stage-content"></div>
+  
+    <div class="nav-arrows">
+      <div id="prevArrow" class="arrow left"></div>
+      <div id="nextArrow" class="arrow right"></div>
+    </div>
+  
+    <div id="home-icon" onclick="goHome()">🏠</div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
