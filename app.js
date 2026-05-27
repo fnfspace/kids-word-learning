@@ -7,14 +7,12 @@ let mode = "auto"; // 필요시 "auto"로 바꿔서 자동 모드 실행
 let words = [];
 let currentIndex = 0;
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
   warmUpSpeechEngine();
 
-  // URL 파라미터에서 week 값 읽기
   const params = new URLSearchParams(window.location.search);
-  const weekFile = params.get("week") || "Week01"; // 기본값 Week01
+  const weekFile = params.get("week") || "Week01";
 
-  // txt 파일 불러오기
   try {
     const response = await fetch(`${weekFile}.txt`);
     const text = await response.text();
