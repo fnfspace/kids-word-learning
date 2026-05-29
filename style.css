@@ -398,11 +398,11 @@ img {
   transform: scale(1.2); /* 살짝 확대 */
 }
 
-/* 📱 모바일 가로모드 (폭 2400px 이하 + landscape) */
-@media screen and (max-width: 2400px) and (orientation: landscape) {
+/* 📱 모바일 가로모드 (폭 1080px 이하 + landscape) */
+@media screen and (max-width: 1080px) and (orientation: landscape) {
   .home-page {
     height: auto;
-    padding-top: 6.5vh;          /* ✅ 맨 위 여백 제거 */
+    padding-top: 0vh;          /* ✅ 맨 위 여백 제거 */
     flex-direction: column;    /* 세로 배치 유지 */
     align-items: center;
     justify-content: flex-start;
@@ -410,47 +410,48 @@ img {
   }
 
   .page {
-    margin-top: 50px !important;  /* ✅ 기본 50px 여백 제거 */
+    margin-top: 30px !important;  /* ✅ 기본 50px 여백 제거 */
   }
 
   h1 {
-    font-size: 3rem;
+    font-size: 1.4rem;
   }
 
   h2 {
-    font-size: 2rem;
+    font-size: 0.9rem;
+    margin: 10px 0 0 0;      /* 위쪽만 조금 주고 나머지는 0 */
   }
 
   /* 단계 제목과 부제목 크기 줄이기 */
   #stage-main-title {
-    font-size: 3rem !important;  /* 원래 2.5rem → 줄임 */
+    font-size: 1.5rem !important;  /* 원래 2.5rem → 줄임 */
     margin-top: 10px;
   }
 
   #stage-subtitle {
-    font-size: 2.5rem !important;  /* 원래 2rem → 줄임 */
+    font-size: 1rem !important;  /* 원래 2rem → 줄임 */
     margin: 5px 0;
   }
 
   #home-icon {
-    font-size: 7rem !important;   /* 원래 5rem → 줄임 */
+    font-size: 3rem !important;   /* 원래 5rem → 줄임 */
     top: 10px;
     left: 10px;
   }
 
   /* 네비게이션 화살표 크기 줄이기 */
   .arrow.left {
-    border-width: 60px 70px 60px 0;   /* 원래 50px/60px → 줄임 */
+    border-width: 20px 30px 20px 0;   /* 원래 50px/60px → 줄임 */
     margin-left: 10px;
   }
   .arrow.right {
-    border-width: 60px 0 60px 70px;
+    border-width: 20px 0 20px 30px;
     margin-right: 10px;
   }
 
   /* 스피커 아이콘 크기 줄이기 */
   #speaker-icon {
-    font-size: 7rem !important;   /* 원래 5rem → 줄임 */
+    font-size: 3rem !important;   /* 원래 5rem → 줄임 */
     bottom: 10px;
     right: 10px;
   }
@@ -458,14 +459,19 @@ img {
   .menu {
     flex-direction: column;
     align-items: center;
-    gap: 25px;
-    margin-top: 40px;
+    gap: 10px;
+    margin-top: 15px;
   }
 
   .menu button {
-    width: 150%;                /* 화면 폭에 맞게 */
-    height: 85px;
-    font-size: 35px;
+    width: 130%;                /* 화면 폭에 맞게 */
+    height: 40px;
+    font-size: 15px;
+  }
+
+  .shuffle-icon {
+    font-size: 1rem;
+    margin-top: 8px; /* 아이콘을 살짝 아래로 내림 */
   }
 
   .word-card { font-size: 13vw; }
@@ -488,7 +494,7 @@ img {
 
   /* 단어 크기 줄이기 */
   .stage2-word {
-    font-size: 15rem !important; /* 원래 13rem → 줄임 */
+    font-size: 5rem !important; /* 원래 13rem → 줄임 */
     margin: 0;
   }
 
@@ -497,13 +503,13 @@ img {
     display: flex;
     flex-wrap: wrap;           /* 화면 좁으면 줄바꿈 */
     justify-content: center;
-    gap: 70px;                 /* 그림 간격 줄임 */
+    gap: 30px;                 /* 그림 간격 줄임 */
   }
 
   /* 그림 크기 줄이기 */
   .stage2-image {
-    width: 350px;              /* 원래 300px → 줄임 */
-    height: 350px;
+    width: 150px;              /* 원래 300px → 줄임 */
+    height: 150px;
     box-sizing: border-box;    /* ✅ border 포함해도 크기 유지 */
   }
 
@@ -521,12 +527,12 @@ img {
 
   /* 4단계 글자 크기 줄이기 */
   .letter {
-    font-size: 18rem !important;   /* 원래 15rem → 줄임 */
+    font-size: 7rem !important;   /* 원래 15rem → 줄임 */
     margin: 0 3px;                /* 글자 간격 줄임 */
   }
 
   .letter.active {
-    font-size: 18rem !important;   /* 강조된 글자도 조금만 크게 */
+    font-size: 7rem !important;   /* 강조된 글자도 조금만 크게 */
     transform: scale(1.1);        /* 확대 효과 줄임 */
   }
 
