@@ -419,7 +419,7 @@ img {
 
   h2 {
     font-size: 0.9rem;
-    margin: 10px 0 0 0;      /* 위쪽만 조금 주고 나머지는 0 */
+    margin: 5px 0 0 0;      /* 위쪽만 조금 주고 나머지는 0 */
   }
 
   /* 단계 제목과 부제목 크기 줄이기 */
@@ -430,7 +430,7 @@ img {
 
   #stage-subtitle {
     font-size: 1rem !important;  /* 원래 2rem → 줄임 */
-    margin: 5px 0;
+    margin: 2px 0;
   }
 
   #home-icon {
@@ -465,13 +465,13 @@ img {
 
   .menu button {
     width: 130%;                /* 화면 폭에 맞게 */
-    height: 40px;
-    font-size: 15px;
+    height: 35px;
+    font-size: 12px;
   }
 
   .shuffle-icon {
     font-size: 1rem;
-    margin-top: 8px; /* 아이콘을 살짝 아래로 내림 */
+    margin-top: 3px; /* 아이콘을 살짝 아래로 내림 */
   }
 
   .word-card { font-size: 13vw; }
@@ -494,7 +494,7 @@ img {
 
   /* 단어 크기 줄이기 */
   .stage2-word {
-    font-size: 5rem !important; /* 원래 13rem → 줄임 */
+    font-size: 4rem !important; /* 원래 13rem → 줄임 */
     margin: 0;
   }
 
@@ -508,8 +508,8 @@ img {
 
   /* 그림 크기 줄이기 */
   .stage2-image {
-    width: 150px;              /* 원래 300px → 줄임 */
-    height: 150px;
+    width: 120px;              /* 원래 300px → 줄임 */
+    height: 120px;
     box-sizing: border-box;    /* ✅ border 포함해도 크기 유지 */
   }
 
@@ -538,46 +538,46 @@ img {
 
   /* 상단 영역 위치와 간격 조정 */
   .stage5-top {
-    top: 15%;                  /* 원래 25% → 위로 올림 */
-    gap: 40px;                  /* 그림과 박스 간격 줄임 */
+    top: 13%;                  /* 원래 25% → 위로 올림 */
+    gap: 30px;                  /* 그림과 박스 간격 줄임 */
   }
 
   /* 그림 크기 줄이기 */
   .word-image {
-    width: 350px;               /* 원래 300px → 줄임 */
-    height: 350px;
+    width: 120px;               /* 원래 300px → 줄임 */
+    height: 120px;
   }
 
   /* 박스 간격 줄이기 */
   .box-container {
-    gap: 60px !important;   /* 원래 50px → 줄임 */
+    gap: 30px !important;   /* 원래 50px → 줄임 */
     justify-content: center; /* 가운데 정렬 */
   }
 
   /* 박스 크기 줄이기 */
   .word-box {
-    width: 250px;               /* 원래 200px → 줄임 */
-    height: 250px;
-    font-size: 8rem;            /* 원래 8rem → 줄임 */
+    width: 90px;               /* 원래 200px → 줄임 */
+    height: 90px;
+    font-size: 4.5rem;            /* 원래 8rem → 줄임 */
   }
 
   /* 하단 버튼 영역 */
   .stage5-bottom {
-    top: 55%;                   /* 원래 55% → 위로 올림 */
-    gap: 50px;                  /* 버튼 간격 줄임 */
+    top: 48%;                   /* 원래 55% → 위로 올림 */
+    gap: 30px;                  /* 버튼 간격 줄임 */
     width: 90%;                 /* 영역 폭 줄임 */
   }
 
   /* 버튼 크기 줄이기 */
   .letter-btn {
-    width: 200px;               /* 원래 150px → 줄임 */
-    height: 200px;
-    font-size: 7rem;            /* 원래 5rem → 줄임 */
+    width: 80px;               /* 원래 150px → 줄임 */
+    height: 80px;
+    font-size: 3rem;            /* 원래 5rem → 줄임 */
   }
   
   .progress-indicator {
-    font-size: 2rem;     /* 글씨 크기 키움 */
-    padding: 10px 22px;     /* 박스 크기 키움 */
+    font-size: 1rem;     /* 글씨 크기 키움 */
+    padding: 7px 15px;     /* 박스 크기 키움 */
     border-radius: 8px;    /* 둥글기 조금 더 크게 */
   }
 }
