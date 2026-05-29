@@ -410,7 +410,7 @@ img {
   }
 
   .page {
-    margin-top: 30px !important;  /* ✅ 기본 50px 여백 제거 */
+    margin-top: 15px !important;  /* ✅ 기본 50px 여백 제거 */
   }
 
   h1 {
@@ -430,7 +430,7 @@ img {
 
   #stage-subtitle {
     font-size: 1rem !important;  /* 원래 2rem → 줄임 */
-    margin: 2px 0;
+    margin: 1px 0;
   }
 
   #home-icon {
@@ -508,8 +508,8 @@ img {
 
   /* 그림 크기 줄이기 */
   .stage2-image {
-    width: 120px;              /* 원래 300px → 줄임 */
-    height: 120px;
+    width: 110px;              /* 원래 300px → 줄임 */
+    height: 110px;
     box-sizing: border-box;    /* ✅ border 포함해도 크기 유지 */
   }
 
@@ -544,27 +544,27 @@ img {
 
   /* 그림 크기 줄이기 */
   .word-image {
-    width: 120px;               /* 원래 300px → 줄임 */
-    height: 120px;
+    width: 110px;               /* 원래 300px → 줄임 */
+    height: 110px;
   }
 
   /* 박스 간격 줄이기 */
   .box-container {
-    gap: 30px !important;   /* 원래 50px → 줄임 */
+    gap: 15px !important;   /* 원래 50px → 줄임 */
     justify-content: center; /* 가운데 정렬 */
   }
 
   /* 박스 크기 줄이기 */
   .word-box {
-    width: 90px;               /* 원래 200px → 줄임 */
-    height: 90px;
-    font-size: 4.5rem;            /* 원래 8rem → 줄임 */
+    width: 80px;               /* 원래 200px → 줄임 */
+    height: 80px;
+    font-size: 4rem;            /* 원래 8rem → 줄임 */
   }
 
   /* 하단 버튼 영역 */
   .stage5-bottom {
     top: 48%;                   /* 원래 55% → 위로 올림 */
-    gap: 30px;                  /* 버튼 간격 줄임 */
+    gap: 15px;                  /* 버튼 간격 줄임 */
     width: 90%;                 /* 영역 폭 줄임 */
   }
 
