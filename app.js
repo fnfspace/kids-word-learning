@@ -518,7 +518,7 @@ function showStage5() {
         allLetters = [...new Set(allLetters)];
 
         let dummyLetters = allLetters.filter(l => !letters.includes(l));
-        dummyLetters = dummyLetters.sort(() => 0.5 - Math.random()).slice(0, Math.max(0, 7 - letters.length));
+        dummyLetters = dummyLetters.sort(() => 0.5 - Math.random()).slice(0, Math.max(0, 6 - letters.length));
 
         let options = [...letters, ...dummyLetters];
         options = options.sort(() => 0.5 - Math.random());
