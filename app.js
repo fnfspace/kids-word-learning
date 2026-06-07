@@ -8,15 +8,30 @@ let words = [];
 let currentIndex = 0;
 
 document.addEventListener("DOMContentLoaded", async () => {
+  updateTabTitle();
   warmUpSpeechEngine();
 
   const params = new URLSearchParams(window.location.search);
-  const weekFile = params.get("week") || "Week01";
+  const weekParam = params.get("week") || "Week01";
 
   try {
-    const response = await fetch(`${weekFile}.txt`);
+    // 마스터 데이터 전체 불러오기
+    const response = await fetch("master_week-1-12.txt");
     const text = await response.text();
-    words = text.split(/\r?\n/).filter(line => line.trim() !== "");
+
+    // 줄 단위로 나누기
+    const lines = text.trim().split(/\r?\n/);
+
+    // Week01 → 첫 번째 줄, Week02 → 두 번째 줄
+    const weekNumber = parseInt(weekParam.replace("Week", ""), 10);
+    const lineIndex = weekNumber - 1;
+
+    // 해당 줄의 단어들을 배열로 변환 (개수는 주차마다 달라도 OK)
+    words = lines[lineIndex]
+      .split(",")
+      .map(w => w.trim())
+      .filter(w => w.length > 0); // 빈칸 제거
+
   } catch (err) {
     console.error("단어 파일을 불러오지 못했습니다:", err);
     words = [];
@@ -33,6 +48,17 @@ document.addEventListener("keydown", (e) => {
     startAutoMode();
   }
 });
+
+function getWeekParam() {
+  const params = new URLSearchParams(window.location.search);
+  return params.get("week") || "Week01"; // 기본값 Week01
+}
+
+function updateTabTitle() {
+  const week = getWeekParam(); // 예: "Week45"
+  const weekNumber = parseInt(week.replace("Week", ""), 10); // → 45
+  document.title = `유아 단어 학습 프로그램 - ${weekNumber}주차`;
+}
 
 // 홈 → 단계 시작
 function startStage(stageNumber) {
