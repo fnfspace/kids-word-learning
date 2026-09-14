@@ -6,6 +6,7 @@ const stageContent = document.getElementById("stage-content");
 let mode = "auto"; // 필요시 "auto"로 바꿔서 자동 모드 실행
 let words = [];
 let currentIndex = 0;
+let currentVersion = "1";
 
 document.addEventListener("DOMContentLoaded", async () => {
   updateTabTitle();
@@ -13,10 +14,16 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const params = new URLSearchParams(window.location.search);
   const weekParam = params.get("week") || "Week01";
+  currentVersion = params.get("v") || "1";
+
+  // 버전별 마스터 파일 선택
+  const masterFile = currentVersion === "2" 
+    ? "master_week-1-8_v2.txt" 
+    : "master_week-1-12_v1.txt";
 
   try {
     // 마스터 데이터 전체 불러오기
-    const response = await fetch("master_week-1-12.txt");
+    const response = await fetch(masterFile);
     const text = await response.text();
 
     // 줄 단위로 나누기
@@ -141,9 +148,10 @@ function getDisplayWord(word) {
   return word.replace(/\(.*?\)/g, "");
 }
 
-// 그림 파일명 찾기 → 괄호 포함 그대로 사용
+// 그림 파일명 찾기 → 괄호 포함 그대로 사용 및 버전별 경로 적용
 function getImageFile(word) {
-  return `img/${word}.png`;
+  const imgFolder = currentVersion === "2" ? "img_v2" : "img_v1";
+  return `${imgFolder}/${word}.png`;
 }
 
 function updateProgress() {
