@@ -11,6 +11,7 @@ CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
 BASE_DIR = Path(__file__).resolve().parent
 SCHEDULE_PATH = BASE_DIR / "schedule_v1.json"
 CARD_DIR = BASE_DIR.parent / "card_v1"
+APP_URL = "https://fnfspace.github.io/kids-word-learning/index.html"
 MAX_MEDIA_GROUP_SIZE = 10
 
 
@@ -25,6 +26,11 @@ def card_paths(lessons):
     return paths
 
 
+def lesson_caption(label, lesson):
+    url = f"{APP_URL}?v=1&week=Week{lesson}"
+    return f'{label}\nDay{lesson}\n<a href="{url}">바로가기</a>'
+
+
 def send_card_album(image_paths, caption):
     for start_index in range(0, len(image_paths), MAX_MEDIA_GROUP_SIZE):
         image_group = image_paths[start_index : start_index + MAX_MEDIA_GROUP_SIZE]
@@ -35,13 +41,17 @@ def send_card_album(image_paths, caption):
             item = {"type": "photo", "media": f"attach://{attachment_name}"}
             if start_index == 0 and index == 0:
                 item["caption"] = caption
+                item["parse_mode"] = "HTML"
             media.append(item)
             files[attachment_name] = (image_path.name, image_path.open("rb"), "image/png")
 
         try:
             response = requests.post(
                 f"https://api.telegram.org/bot{BOT_TOKEN}/sendMediaGroup",
-                data={"chat_id": CHAT_ID, "media": json.dumps(media)},
+                data={
+                    "chat_id": CHAT_ID,
+                    "media": json.dumps(media),
+                },
                 files=files,
                 timeout=60,
             )
@@ -55,7 +65,7 @@ def send_card_album(image_paths, caption):
 
 def send_lessons(lessons, label):
     for lesson in lessons:
-        send_card_album(card_paths([lesson]), f"{label}\nWeek{lesson}")
+        send_card_album(card_paths([lesson]), lesson_caption(label, lesson))
 
 
 def main():
